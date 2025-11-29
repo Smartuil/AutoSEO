@@ -34,7 +34,7 @@ jobs:
         BAIDU_TOKEN: ${{ secrets.BAIDU_TOKEN }}
         SITEMAP_URL: ${{ secrets.SITEMAP_URL }}
       run: |
-        python scripts/parse_sitemap.py --sitemap "${SITEMAP_URL}" --site "${SITE_URL}" --token "${BAIDU_TOKEN}" --submit --verbose
+        python parse_sitemap.py --sitemap "${SITEMAP_URL}" --site "${SITE_URL}" --token "${BAIDU_TOKEN}" --submit --verbose
         
     - name: Display URLs count
       run: |

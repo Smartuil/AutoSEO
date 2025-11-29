@@ -48,8 +48,9 @@ pip install -r requirements.txt
 
 `python parse_sitemap.py --sitemap https://example.com/sitemap.xml --site https://example.com --token YOUR_TOKEN --submit`
 
+## Star History
 
-
+[![Star History Chart](https://api.star-history.com/svg?repos=Smartuil/AutoSEO&type=date&legend=top-left)](https://www.star-history.com/#Smartuil/AutoSEO&type=date&legend=top-left)
 
 
 

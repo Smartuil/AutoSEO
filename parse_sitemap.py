@@ -11,6 +11,8 @@ import sys
 import os
 import time
 import logging
+import urllib.parse
+import shlex
 
 # 配置日志
 logging.basicConfig(
@@ -120,26 +122,55 @@ def submit_to_baidu(site_url, token, urls_file, verbose=False):
         verbose (bool): 是否输出详细信息
     """
     try:
+        # 验证和清理参数
+        if not site_url or not token or not urls_file:
+            raise ValueError("site_url、token和urls_file不能为空")
+        
         # 安全地构建API URL，避免日志泄露token
         masked_token = token[:4] + "***" + token[-4:] if len(token) > 8 else "***"
-        api_url = f"http://data.zz.baidu.com/urls?site={site_url}&token={token}"
+        
+        # 使用urllib.parse确保URL格式正确
+        site_url = site_url.strip()
+        if not site_url.startswith(('http://', 'https://')):
+            site_url = 'https://' + site_url
+            
+        # 构建API URL
+        params = {
+            'site': site_url,
+            'token': token
+        }
+        
+        # 使用urllib.parse构建查询字符串
+        query_string = urllib.parse.urlencode(params)
+        api_url = f"http://data.zz.baidu.com/urls?{query_string}"
         
         if verbose:
             logger.info(f"正在提交URL到百度API (Token: {masked_token})")
-            
-        # 使用curl命令提交
-        command = f'curl -H \'Content-Type:text/plain\' --data-binary @{urls_file} "{api_url}"'
+            logger.info(f"站点URL: {site_url}")
+            logger.info(f"API URL: {api_url.replace(token, masked_token)}")
+        
+        # 使用Python requests而不是curl命令，避免URL格式问题
+        with open(urls_file, 'r', encoding='utf-8') as f:
+            urls_data = f.read()
+        
+        headers = {
+            'Content-Type': 'text/plain'
+        }
         
         if verbose:
-            # 在日志中隐藏token
-            safe_command = command.replace(token, masked_token)
-            logger.info(f"执行命令: {safe_command}")
+            logger.info(f"提交的URL数量: {len(urls_data.split())}")
+            logger.info("正在发送请求到百度API...")
             
-        result = os.system(command)
+        # 使用Python requests发送请求
+        response = requests.post(api_url, data=urls_data.encode('utf-8'), headers=headers, timeout=30)
         
-        if verbose:
-            logger.info(f"命令执行结果: {result}")
+        if response.status_code == 200:
+            logger.info(f"成功提交URL到百度: {response.text}")
+        else:
+            logger.error(f"提交URL到百度失败: HTTP {response.status_code} - {response.text}")
             
+    except requests.exceptions.RequestException as e:
+        logger.error(f"网络请求错误: {str(e)}")
     except Exception as e:
         logger.error(f"提交URL到百度时出错: {str(e)}")
 

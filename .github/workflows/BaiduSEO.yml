@@ -56,6 +56,6 @@ jobs:
         if git diff --cached --quiet; then
           echo "没有变化需要提交"
         else
-          git commit -m "自动合并所有目录的文本文件 [skip ci]"
+          git commit -m "提交urls.txt"
           git push
         fi

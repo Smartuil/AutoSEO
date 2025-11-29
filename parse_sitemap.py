@@ -11,15 +11,53 @@ import sys
 import os
 import time
 import logging
+import logging.handlers
 import urllib.parse
 import shlex
+from datetime import datetime
 
-# 配置日志
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s'
-)
-logger = logging.getLogger(__name__)
+def setup_logging(log_file=None, verbose=False):
+    """
+    设置日志配置，同时输出到控制台和文件
+    
+    Args:
+        log_file (str): 日志文件路径，如果为None则不输出到文件
+        verbose (bool): 是否输出详细信息
+    """
+    # 创建logger
+    logger = logging.getLogger(__name__)
+    logger.setLevel(logging.INFO if not verbose else logging.DEBUG)
+    
+    # 清除已有的处理器
+    logger.handlers = []
+    
+    # 设置日志格式
+    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+    
+    # 控制台处理器
+    console_handler = logging.StreamHandler()
+    console_handler.setFormatter(formatter)
+    logger.addHandler(console_handler)
+    
+    # 如果指定了日志文件，添加文件处理器
+    if log_file:
+        # 确保日志目录存在
+        log_dir = os.path.dirname(os.path.abspath(log_file))
+        if not os.path.exists(log_dir):
+            os.makedirs(log_dir)
+            
+        # 使用RotatingFileHandler，防止日志文件过大
+        file_handler = logging.handlers.RotatingFileHandler(
+            log_file, 
+            maxBytes=10*1024*1024,  # 10MB
+            backupCount=5,
+            encoding='utf-8'
+        )
+        file_handler.setFormatter(formatter)
+        logger.addHandler(file_handler)
+        logger.info(f"日志将保存到文件: {log_file}")
+    
+    return logger
 
 def get_sitemap_urls(sitemap_url, verbose=False):
     """
@@ -32,6 +70,7 @@ def get_sitemap_urls(sitemap_url, verbose=False):
     Returns:
         list: URL列表
     """
+    logger = logging.getLogger(__name__)
     urls = []
     
     try:
@@ -96,6 +135,7 @@ def save_urls_to_file(urls, filename):
         urls (list): URL列表
         filename (str): 输出文件名
     """
+    logger = logging.getLogger(__name__)
     try:
         with open(filename, 'w', encoding='utf-8') as f:
             for url in urls:
@@ -121,6 +161,7 @@ def submit_to_baidu(site_url, token, urls_file, verbose=False):
         urls_file (str): 包含URL的文件路径
         verbose (bool): 是否输出详细信息
     """
+    logger = logging.getLogger(__name__)
     try:
         # 验证和清理参数
         if not site_url or not token or not urls_file:
@@ -192,8 +233,21 @@ def main():
                         help='是否提交URL到百度')
     parser.add_argument('--verbose', action='store_true',
                         help='输出详细信息')
+    parser.add_argument('--log-file', default='logfile.log',
+                        help='日志文件路径 (默认: logfile.log)')
     
     args = parser.parse_args()
+    
+    # 获取日志文件路径
+    log_file = args.log_file
+    
+    # 初始化日志系统
+    logger = setup_logging(log_file, args.verbose)
+    
+    logger.info("=" * 50)
+    logger.info("Sitemap解析和百度URL提交工具启动")
+    logger.info(f"日志文件: {log_file}")
+    logger.info("=" * 50)
     
     # 检查token是否为空
     if args.submit and not args.token:
@@ -213,6 +267,10 @@ def main():
     # 如果指定了提交参数，则提交到百度
     if args.submit:
         submit_to_baidu(args.site, args.token, args.output, args.verbose)
+    
+    logger.info("=" * 50)
+    logger.info("程序执行完成")
+    logger.info("=" * 50)
 
 if __name__ == "__main__":
     main()

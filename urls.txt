@@ -1,4 +1,6 @@
 https://www.bonan.online/
+https://www.bonan.online/posts/MeshDrawingPipeline
+https://www.bonan.online/posts/Lyra'sAnimation
 https://www.bonan.online/posts/CSAPP-2
 https://www.bonan.online/posts/CSAPP-1
 https://www.bonan.online/posts/Xtbx

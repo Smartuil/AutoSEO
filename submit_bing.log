@@ -1,0 +1,46 @@
+2025-12-01 14:37:37,259 - INFO - 日志将保存到文件: submit_bing.log
+2025-12-01 14:37:37,259 - INFO - ==================================================
+2025-12-01 14:37:37,259 - INFO - 必应URL提交工具启动
+2025-12-01 14:37:37,259 - INFO - 日志文件: submit_bing.log
+2025-12-01 14:37:37,259 - INFO - ==================================================
+2025-12-01 14:37:37,259 - INFO - 正在提交URL到必应API (API Key: 4595***0e27)
+2025-12-01 14:37:37,259 - INFO - 站点URL: https://www.bonan.online
+2025-12-01 14:37:37,259 - INFO - API URL: https://ssl.bing.com/webmaster/api.svc/json/SubmitUrlbatch?apikey=4595***0e27
+2025-12-01 14:37:37,259 - INFO - 提交的URL数量: 27
+2025-12-01 14:37:37,260 - INFO - 正在发送请求到必应API...
+2025-12-01 14:37:37,260 - DEBUG - 请求体: {
+  "siteUrl": "https://www.bonan.online",
+  "urlList": [
+    "https://www.bonan.online/",
+    "https://www.bonan.online/posts/MeshDrawingPipeline",
+    "https://www.bonan.online/posts/Lyra'sAnimation",
+    "https://www.bonan.online/posts/CSAPP-2",
+    "https://www.bonan.online/posts/CSAPP-1",
+    "https://www.bonan.online/posts/Xtbx",
+    "https://www.bonan.online/posts/CSAPP",
+    "https://www.bonan.online/posts/j8wE",
+    "https://www.bonan.online/posts/ifDZ",
+    "https://www.bonan.online/posts/P9N3",
+    "https://www.bonan.online/posts/pHky",
+    "https://www.bonan.online/posts/TC1I",
+    "https://www.bonan.online/posts/Abs0",
+    "https://www.bonan.online/posts/BUj2",
+    "https://www.bonan.online/posts/n1qu",
+    "https://www.bonan.online/posts/Z3MC",
+    "https://www.bonan.online/posts/5sQj",
+    "https://www.bonan.online//copyright",
+    "https://www.bonan.online//cookies",
+    "https://www.bonan.online//privacy",
+    "https://www.bonan.online//ReportingAndFeedback",
+    "https://www.bonan.online//TrendRader",
+    "https://www.bonan.online/link",
+    "https://www.bonan.online/archives",
+    "https://www.bonan.online/categories",
+    "https://www.bonan.online/tags",
+    "https://www.bonan.online/about"
+  ]
+}
+2025-12-01 14:37:37,688 - INFO - 成功提交URL到必应: {"d":null}
+2025-12-01 14:37:37,689 - INFO - ==================================================
+2025-12-01 14:37:37,689 - INFO - 程序执行完成
+2025-12-01 14:37:37,690 - INFO - ==================================================

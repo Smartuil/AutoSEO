@@ -1,0 +1,38 @@
+name: Submit URLs to Bing
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    # 每天 UTC 08:00 执行 (北京时间 16:00)
+    - cron: '0 8 * * *'
+  workflow_dispatch:
+
+jobs:
+  submit-to-bing:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        
+    - name: Parse sitemap
+      run: |
+        python parse_sitemap.py --sitemap ${{ secrets.SITEMAP_URL }} --output urls.txt
+        
+    - name: Submit URLs to Bing
+      run: |
+        python submit_bing.py --site ${{ secrets.SITE_URL }} --api-key ${{ secrets.BING_API_KEY }} --urls-file urls.txt --verbose
+      env:
+        BING_API_KEY: ${{ secrets.BING_API_KEY }}
+        SITE_URL: ${{ secrets.SITE_URL }}

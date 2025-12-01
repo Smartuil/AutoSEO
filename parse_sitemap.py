@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Sitemap解析和百度URL提交工具
-用于解析sitemap.xml并将URL提交到百度搜索引擎
+Sitemap解析工具
+用于解析sitemap.xml并提取URL列表
 """
 
 import requests
@@ -12,9 +12,6 @@ import os
 import time
 import logging
 import logging.handlers
-import urllib.parse
-import shlex
-from datetime import datetime
 
 def setup_logging(log_file=None, verbose=False):
     """
@@ -151,90 +148,20 @@ def save_urls_to_file(urls, filename):
     except Exception as e:
         logger.error(f"保存URL到文件时出错: {str(e)}")
 
-def submit_to_baidu(site_url, token, urls_file, verbose=False):
-    """
-    提交URL到百度搜索引擎
-    
-    Args:
-        site_url (str): 网站URL
-        token (str): 百度站长平台的token
-        urls_file (str): 包含URL的文件路径
-        verbose (bool): 是否输出详细信息
-    """
-    logger = logging.getLogger(__name__)
-    try:
-        # 验证和清理参数
-        if not site_url or not token or not urls_file:
-            raise ValueError("site_url、token和urls_file不能为空")
-        
-        # 安全地构建API URL，避免日志泄露token
-        masked_token = token[:4] + "***" + token[-4:] if len(token) > 8 else "***"
-        
-        # 使用urllib.parse确保URL格式正确
-        site_url = site_url.strip()
-        if not site_url.startswith(('http://', 'https://')):
-            site_url = 'https://' + site_url
-            
-        # 构建API URL
-        params = {
-            'site': site_url,
-            'token': token
-        }
-        
-        # 使用urllib.parse构建查询字符串
-        query_string = urllib.parse.urlencode(params)
-        api_url = f"http://data.zz.baidu.com/urls?{query_string}"
-        
-        if verbose:
-            logger.info(f"正在提交URL到百度API (Token: {masked_token})")
-            logger.info(f"站点URL: {site_url}")
-            logger.info(f"API URL: {api_url.replace(token, masked_token)}")
-        
-        # 使用Python requests而不是curl命令，避免URL格式问题
-        with open(urls_file, 'r', encoding='utf-8') as f:
-            urls_data = f.read()
-        
-        headers = {
-            'Content-Type': 'text/plain'
-        }
-        
-        if verbose:
-            logger.info(f"提交的URL数量: {len(urls_data.split())}")
-            logger.info("正在发送请求到百度API...")
-            
-        # 使用Python requests发送请求
-        response = requests.post(api_url, data=urls_data.encode('utf-8'), headers=headers, timeout=30)
-        
-        if response.status_code == 200:
-            logger.info(f"成功提交URL到百度: {response.text}")
-        else:
-            logger.error(f"提交URL到百度失败: HTTP {response.status_code} - {response.text}")
-            
-    except requests.exceptions.RequestException as e:
-        logger.error(f"网络请求错误: {str(e)}")
-    except Exception as e:
-        logger.error(f"提交URL到百度时出错: {str(e)}")
+
 
 def main():
     """主函数"""
-    parser = argparse.ArgumentParser(description='解析sitemap并提交URL到百度搜索引擎')
+    parser = argparse.ArgumentParser(description='解析sitemap并提取URL列表')
     parser.add_argument('--sitemap', 
                         default=os.environ.get('SITEMAP_URL', 'https://www.bonan.online/sitemap.xml'),
                         help='sitemap的URL')
     parser.add_argument('--output', default='urls.txt',
                         help='输出URL的文件名')
-    parser.add_argument('--site', 
-                        default=os.environ.get('SITE_URL', 'https://www.bonan.online'),
-                        help='网站URL')
-    parser.add_argument('--token', 
-                        default=os.environ.get('BAIDU_TOKEN', ''),
-                        help='百度站长平台的token')
-    parser.add_argument('--submit', action='store_true',
-                        help='是否提交URL到百度')
     parser.add_argument('--verbose', action='store_true',
                         help='输出详细信息')
-    parser.add_argument('--log-file', default='logfile.log',
-                        help='日志文件路径 (默认: logfile.log)')
+    parser.add_argument('--log-file', default='parse_sitemap.log',
+                        help='日志文件路径 (默认: parse_sitemap.log)')
     
     args = parser.parse_args()
     
@@ -245,14 +172,9 @@ def main():
     logger = setup_logging(log_file, args.verbose)
     
     logger.info("=" * 50)
-    logger.info("Sitemap解析和百度URL提交工具启动")
+    logger.info("Sitemap解析工具启动")
     logger.info(f"日志文件: {log_file}")
     logger.info("=" * 50)
-    
-    # 检查token是否为空
-    if args.submit and not args.token:
-        logger.error("提交到百度需要token，请通过--token参数或BAIDU_TOKEN环境变量提供")
-        sys.exit(1)
     
     # 获取sitemap中的URL
     urls = get_sitemap_urls(args.sitemap, args.verbose)
@@ -264,12 +186,10 @@ def main():
     # 保存URL到文件
     save_urls_to_file(urls, args.output)
     
-    # 如果指定了提交参数，则提交到百度
-    if args.submit:
-        submit_to_baidu(args.site, args.token, args.output, args.verbose)
-    
     logger.info("=" * 50)
     logger.info("程序执行完成")
+    logger.info(f"URL列表已保存到: {args.output}")
+    logger.info("如需提交到百度，请使用: python submit_baidu.py --urls-file urls.txt")
     logger.info("=" * 50)
 
 if __name__ == "__main__":

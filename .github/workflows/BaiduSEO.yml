@@ -28,13 +28,18 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         
-    - name: Run sitemap parser
+    - name: Parse sitemap
+      env:
+        SITEMAP_URL: ${{ secrets.SITEMAP_URL }}
+      run: |
+        python parse_sitemap.py --sitemap "${SITEMAP_URL}" --verbose
+        
+    - name: Submit URLs to Baidu
       env:
         SITE_URL: ${{ secrets.SITE_URL }}
         BAIDU_TOKEN: ${{ secrets.BAIDU_TOKEN }}
-        SITEMAP_URL: ${{ secrets.SITEMAP_URL }}
       run: |
-        python parse_sitemap.py --sitemap "${SITEMAP_URL}" --site "${SITE_URL}" --token "${BAIDU_TOKEN}" --submit --verbose
+        python submit_baidu.py --site "${SITE_URL}" --token "${BAIDU_TOKEN}" --urls-file urls.txt --verbose
         
     - name: Display URLs count
       run: |
@@ -47,15 +52,17 @@ jobs:
         name: sitemap-results
         path: |
           urls.txt
+          parse_sitemap.log
+          submit_baidu.log
         retention-days: 30
     - name: Commit and push if changed
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add urls.txt logfile.log
+        git add urls.txt parse_sitemap.log submit_baidu.log
         if git diff --cached --quiet; then
           echo "没有变化需要提交"
         else
-          git commit -m "提交urls.txt"
+          git commit -m "更新URL列表和日志文件"
           git push
         fi

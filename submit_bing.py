@@ -107,8 +107,7 @@ def submit_to_bing(site_url, api_key, urls_file, verbose=False):
         }
         
         headers = {
-            'Content-Type': 'application/json; charset=utf-8',
-            'Host': 'ssl.bing.com'
+            'Content-Type': 'application/json; charset=utf-8'
         }
         
         if verbose:

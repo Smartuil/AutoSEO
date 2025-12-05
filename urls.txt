@@ -1,4 +1,5 @@
 https://www.bonan.online/
+https://www.bonan.online/posts/AwesomeWebsites
 https://www.bonan.online/posts/Badge
 https://www.bonan.online/posts/MeshDrawingPipeline
 https://www.bonan.online/posts/Lyra'sAnimation

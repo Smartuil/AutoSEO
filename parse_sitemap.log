@@ -231,3 +231,20 @@
 2025-12-06 00:40:31,058 - INFO - URL列表已保存到: urls.txt
 2025-12-06 00:40:31,059 - INFO - 如需提交到百度，请使用: python submit_baidu.py --urls-file urls.txt
 2025-12-06 00:40:31,059 - INFO - ==================================================
+2025-12-06 00:44:39,092 - INFO - 日志将保存到文件: parse_sitemap.log
+2025-12-06 00:44:39,092 - INFO - ==================================================
+2025-12-06 00:44:39,092 - INFO - Sitemap解析工具启动
+2025-12-06 00:44:39,092 - INFO - 日志文件: parse_sitemap.log
+2025-12-06 00:44:39,092 - INFO - ==================================================
+2025-12-06 00:44:40,098 - INFO - 已保存 30 个URL到 urls.txt
+2025-12-06 00:44:40,099 - INFO - 前5个URL预览:
+2025-12-06 00:44:40,099 - INFO - 1. https://www.bonan.online/
+2025-12-06 00:44:40,099 - INFO - 2. https://www.bonan.online/posts/FastFindInBlueprint
+2025-12-06 00:44:40,099 - INFO - 3. https://www.bonan.online/posts/AwesomeWebsites
+2025-12-06 00:44:40,099 - INFO - 4. https://www.bonan.online/posts/Badge
+2025-12-06 00:44:40,099 - INFO - 5. https://www.bonan.online/posts/MeshDrawingPipeline
+2025-12-06 00:44:40,099 - INFO - ==================================================
+2025-12-06 00:44:40,099 - INFO - 程序执行完成
+2025-12-06 00:44:40,099 - INFO - URL列表已保存到: urls.txt
+2025-12-06 00:44:40,099 - INFO - 如需提交到百度，请使用: python submit_baidu.py --urls-file urls.txt
+2025-12-06 00:44:40,099 - INFO - ==================================================

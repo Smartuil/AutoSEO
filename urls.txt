@@ -1,4 +1,5 @@
 https://www.bonan.online/
+https://www.bonan.online/posts/VSAndLinuxAndDebug
 https://www.bonan.online/posts/FastFindInBlueprint
 https://www.bonan.online/posts/AwesomeWebsites
 https://www.bonan.online/posts/Badge
@@ -21,6 +22,7 @@ https://www.bonan.online/posts/5sQj
 https://www.bonan.online//copyright
 https://www.bonan.online//cookies
 https://www.bonan.online//privacy
+https://www.bonan.online//Sponsor
 https://www.bonan.online//ReportingAndFeedback
 https://www.bonan.online//TrendRader
 https://www.bonan.online/link

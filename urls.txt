@@ -1,4 +1,5 @@
 https://www.bonan.online/
+https://www.bonan.online/posts/build-your-own-shell
 https://www.bonan.online/posts/VSAndLinuxAndDebug
 https://www.bonan.online/posts/FastFindInBlueprint
 https://www.bonan.online/posts/AwesomeWebsites

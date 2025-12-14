@@ -519,3 +519,20 @@
 2025-12-14 00:47:26,333 - INFO - URL列表已保存到: urls.txt
 2025-12-14 00:47:26,334 - INFO - 如需提交到百度，请使用: python submit_baidu.py --urls-file urls.txt
 2025-12-14 00:47:26,334 - INFO - ==================================================
+2025-12-14 00:53:50,352 - INFO - 日志将保存到文件: parse_sitemap.log
+2025-12-14 00:53:50,352 - INFO - ==================================================
+2025-12-14 00:53:50,352 - INFO - Sitemap解析工具启动
+2025-12-14 00:53:50,352 - INFO - 日志文件: parse_sitemap.log
+2025-12-14 00:53:50,352 - INFO - ==================================================
+2025-12-14 00:53:51,638 - INFO - 已保存 37 个URL到 urls.txt
+2025-12-14 00:53:51,639 - INFO - 前5个URL预览:
+2025-12-14 00:53:51,639 - INFO - 1. https://www.bonan.online/
+2025-12-14 00:53:51,639 - INFO - 2. https://www.bonan.online/posts/CPPTemplate
+2025-12-14 00:53:51,639 - INFO - 3. https://www.bonan.online/posts/FSelfRegisteringExec
+2025-12-14 00:53:51,639 - INFO - 4. https://www.bonan.online/posts/FindInBlueprint
+2025-12-14 00:53:51,639 - INFO - 5. https://www.bonan.online/posts/bulid-your-own-grep
+2025-12-14 00:53:51,639 - INFO - ==================================================
+2025-12-14 00:53:51,639 - INFO - 程序执行完成
+2025-12-14 00:53:51,639 - INFO - URL列表已保存到: urls.txt
+2025-12-14 00:53:51,639 - INFO - 如需提交到百度，请使用: python submit_baidu.py --urls-file urls.txt
+2025-12-14 00:53:51,639 - INFO - ==================================================

@@ -1,4 +1,7 @@
 https://www.bonan.online/
+https://www.bonan.online/posts/CPPTemplate
+https://www.bonan.online/posts/FSelfRegisteringExec
+https://www.bonan.online/posts/FindInBlueprint
 https://www.bonan.online/posts/bulid-your-own-grep
 https://www.bonan.online/posts/build-your-own-shell
 https://www.bonan.online/posts/VSAndLinuxAndDebug

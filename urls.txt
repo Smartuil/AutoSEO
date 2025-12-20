@@ -1,4 +1,7 @@
 https://www.bonan.online/
+https://www.bonan.online/posts/Iris6
+https://www.bonan.online/posts/SimplePropertyDebug
+https://www.bonan.online/posts/DNSServer
 https://www.bonan.online/posts/Iris5
 https://www.bonan.online/posts/git
 https://www.bonan.online/posts/Iris4

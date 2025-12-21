@@ -39,7 +39,7 @@ jobs:
         SITE_URL: ${{ secrets.SITE_URL }}
         BAIDU_TOKEN: ${{ secrets.BAIDU_TOKEN }}
       run: |
-        python submit_baidu.py --site "${SITE_URL}" --token "${BAIDU_TOKEN}" --urls-file urls.txt --verbose
+        python submit_baidu.py --site "${SITE_URL}" --token "${BAIDU_TOKEN}" --urls-file urls.txt --random 10 --verbose
         
     - name: Display URLs count
       run: |

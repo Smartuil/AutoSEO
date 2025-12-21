@@ -11,6 +11,7 @@ import os
 import logging
 import logging.handlers
 import urllib.parse
+import random
 from datetime import datetime
 
 def setup_logging(log_file=None, verbose=False):
@@ -56,7 +57,7 @@ def setup_logging(log_file=None, verbose=False):
     
     return logger
 
-def submit_to_baidu(site_url, token, urls_file, verbose=False):
+def submit_to_baidu(site_url, token, urls_file, verbose=False, random_count=0):
     """
     提交URL到百度搜索引擎
     
@@ -65,6 +66,7 @@ def submit_to_baidu(site_url, token, urls_file, verbose=False):
         token (str): 百度站长平台的token
         urls_file (str): 包含URL的文件路径
         verbose (bool): 是否输出详细信息
+        random_count (int): 随机选择的URL数量，0表示不启用随机选择
     """
     logger = logging.getLogger(__name__)
     try:
@@ -107,6 +109,21 @@ def submit_to_baidu(site_url, token, urls_file, verbose=False):
             logger.warning("URL文件为空，没有URL可以提交")
             return
         
+        # 解析URL列表
+        urls_list = [url.strip() for url in urls_data.split('\n') if url.strip()]
+        
+        # 如果启用随机选择，从URL列表中随机选择指定数量
+        if random_count > 0:
+            original_count = len(urls_list)
+            if original_count > random_count:
+                urls_list = random.sample(urls_list, random_count)
+                logger.info(f"随机选择模式: 从 {original_count} 个URL中随机选择了 {random_count} 个")
+            else:
+                logger.info(f"随机选择模式: URL总数({original_count})不超过{random_count}个，将全部提交")
+        
+        # 重新组装URL数据
+        urls_data = '\n'.join(urls_list)
+        
         headers = {
             'Content-Type': 'text/plain'
         }
@@ -142,6 +159,8 @@ def main():
                         help='包含URL的文件路径')
     parser.add_argument('--verbose', action='store_true',
                         help='输出详细信息')
+    parser.add_argument('--random', type=int, default=10, metavar='N',
+                        help='随机选择N个URL提交（默认: 10）')
     parser.add_argument('--log-file', default='submit_baidu.log',
                         help='日志文件路径 (默认: submit_baidu.log)')
     
@@ -164,7 +183,7 @@ def main():
         sys.exit(1)
     
     # 提交URL到百度
-    submit_to_baidu(args.site, args.token, args.urls_file, args.verbose)
+    submit_to_baidu(args.site, args.token, args.urls_file, args.verbose, args.random)
     
     logger.info("=" * 50)
     logger.info("程序执行完成")

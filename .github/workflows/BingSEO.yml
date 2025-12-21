@@ -32,7 +32,7 @@ jobs:
         
     - name: Submit URLs to Bing
       run: |
-        python submit_bing.py --site ${{ secrets.SITE_URL }} --api-key ${{ secrets.BING_API_KEY }} --urls-file urls.txt --verbose
+        python submit_bing.py --site ${{ secrets.SITE_URL }} --api-key ${{ secrets.BING_API_KEY }} --urls-file urls.txt --random 100 --verbose
       env:
         BING_API_KEY: ${{ secrets.BING_API_KEY }}
         SITE_URL: ${{ secrets.SITE_URL }}

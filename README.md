@@ -70,6 +70,9 @@ python submit_baidu.py --urls-file my_urls.txt
 # 显示详细信息
 python submit_baidu.py --verbose
 
+# 随机选择20个URL提交
+python submit_baidu.py --random 20
+
 # 自定义日志文件
 python submit_baidu.py --log-file submit.log
 ```
@@ -79,6 +82,7 @@ python submit_baidu.py --log-file submit.log
 - `--token`: 百度站长平台的token (默认: 环境变量BAIDU_TOKEN)
 - `--urls-file`: 包含URL的文件路径 (默认: urls.txt)
 - `--verbose`: 输出详细信息
+- `--random`: 随机选择N个URL提交 (默认: 10，百度每次限制10个)
 - `--log-file`: 日志文件路径 (默认: submit_baidu.log)
 
 ### 3. submit_bing.py - 必应URL提交工具
@@ -93,7 +97,18 @@ python submit_bing.py --verbose
 
 # 指定参数
 python submit_bing.py --site https://example.com --api-key YOUR_BING_API_KEY --urls-file urls.txt --verbose
+
+# 随机选择50个URL提交
+python submit_bing.py --random 50
 ```
+
+**参数说明：**
+- `--site`: 网站URL (默认: 环境变量SITE_URL或https://www.bonan.online)
+- `--api-key`: 必应站长平台的API密钥 (默认: 环境变量BING_API_KEY)
+- `--urls-file`: 包含URL的文件路径 (默认: urls.txt)
+- `--verbose`: 输出详细信息
+- `--random`: 随机选择N个URL提交 (默认: 100)
+- `--log-file`: 日志文件路径 (默认: submit_bing.log)
 
 ## 完整工作流程
 

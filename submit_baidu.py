@@ -81,10 +81,15 @@ def submit_to_baidu(site_url, token, urls_file, verbose=False, random_count=0):
         # 安全地构建API URL，避免日志泄露token
         masked_token = token[:4] + "***" + token[-4:] if len(token) > 8 else "***"
         
-        # 使用urllib.parse确保URL格式正确
+        # 处理site_url，百度API需要不带协议的域名格式
         site_url = site_url.strip()
-        if not site_url.startswith(('http://', 'https://')):
-            site_url = 'https://' + site_url
+        # 移除协议头
+        if site_url.startswith('https://'):
+            site_url = site_url[8:]
+        elif site_url.startswith('http://'):
+            site_url = site_url[7:]
+        # 移除末尾斜杠
+        site_url = site_url.rstrip('/')
             
         # 构建API URL
         params = {
@@ -128,10 +133,13 @@ def submit_to_baidu(site_url, token, urls_file, verbose=False, random_count=0):
             'Content-Type': 'text/plain'
         }
         
-        url_count = len(urls_data.split())
+        url_count = len(urls_list)
         if verbose:
             logger.info(f"提交的URL数量: {url_count}")
             logger.info("正在发送请求到百度API...")
+            logger.info(f"请求URL: {api_url.replace(token, masked_token)}")
+            logger.info(f"请求头: {headers}")
+            logger.info(f"请求体 (URLs):\n{urls_data}")
             
         # 使用Python requests发送请求
         response = requests.post(api_url, data=urls_data.encode('utf-8'), headers=headers, timeout=30)

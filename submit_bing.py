@@ -2,6 +2,7 @@
 """
 必应URL提交工具
 专门用于将URL列表提交到必应搜索引擎
+支持传统Bing Webmaster API和IndexNow API
 """
 
 import requests
@@ -13,6 +14,7 @@ import logging.handlers
 import json
 import random
 from datetime import datetime
+from urllib.parse import urlparse
 
 def setup_logging(log_file=None, verbose=False):
     """
@@ -143,6 +145,103 @@ def submit_to_bing(site_url, api_key, urls_file, verbose=False, random_count=0):
     except Exception as e:
         logger.error(f"提交URL到必应时出错: {str(e)}")
 
+def submit_to_indexnow(site_url, api_key, urls_file, verbose=False, random_count=0):
+    """
+    通过IndexNow API提交URL
+    
+    Args:
+        site_url (str): 网站URL
+        api_key (str): IndexNow的API密钥
+        urls_file (str): 包含URL的文件路径
+        verbose (bool): 是否输出详细信息
+        random_count (int): 随机选择的URL数量，0表示不启用随机选择
+    """
+    logger = logging.getLogger(__name__)
+    try:
+        # 验证和清理参数
+        if not site_url or not api_key or not urls_file:
+            raise ValueError("site_url、api_key和urls_file不能为空")
+        
+        # 检查URL文件是否存在
+        if not os.path.exists(urls_file):
+            raise FileNotFoundError(f"URL文件不存在: {urls_file}")
+        
+        # 安全地处理API密钥，避免日志泄露
+        masked_key = api_key[:4] + "***" + api_key[-4:] if len(api_key) > 8 else "***"
+        
+        # 确保site_url格式正确
+        site_url = site_url.strip()
+        if not site_url.startswith(('http://', 'https://')):
+            site_url = 'https://' + site_url
+        
+        # 解析host
+        parsed_url = urlparse(site_url)
+        host = parsed_url.netloc
+        
+        # IndexNow API URL
+        api_url = "https://api.indexnow.org/IndexNow"
+        
+        if verbose:
+            logger.info(f"正在通过IndexNow API提交URL (API Key: {masked_key})")
+            logger.info(f"站点URL: {site_url}")
+            logger.info(f"Host: {host}")
+            logger.info(f"API URL: {api_url}")
+        
+        # 读取URL文件
+        with open(urls_file, 'r', encoding='utf-8') as f:
+            urls = [line.strip() for line in f if line.strip()]
+        
+        if not urls:
+            logger.warning("URL文件为空，没有URL可以提交")
+            return
+        
+        # 如果启用随机选择，从URL列表中随机选择指定数量
+        if random_count > 0:
+            original_count = len(urls)
+            if original_count > random_count:
+                urls = random.sample(urls, random_count)
+                logger.info(f"随机选择模式: 从 {original_count} 个URL中随机选择了 {random_count} 个")
+            else:
+                logger.info(f"随机选择模式: URL总数({original_count})不超过{random_count}个，将全部提交")
+        
+        # 构建IndexNow请求数据
+        request_data = {
+            "host": host,
+            "key": api_key,
+            "keyLocation": f"{site_url.rstrip('/')}/{api_key}.txt",
+            "urlList": urls
+        }
+        
+        headers = {
+            'Content-Type': 'application/json; charset=utf-8'
+        }
+        
+        if verbose:
+            logger.info(f"提交的URL数量: {len(urls)}")
+            logger.info("正在发送请求到IndexNow API...")
+            logger.info(f"请求URL: {api_url}")
+            logger.info(f"请求头: {headers}")
+            logger.info(f"请求体: {json.dumps(request_data, indent=2, ensure_ascii=False).replace(api_key, masked_key)}")
+            
+        # 发送POST请求
+        response = requests.post(api_url, 
+                               data=json.dumps(request_data, ensure_ascii=False).encode('utf-8'), 
+                               headers=headers, 
+                               timeout=30)
+        
+        # IndexNow返回200或202表示成功
+        if response.status_code in [200, 202]:
+            logger.info(f"成功通过IndexNow提交URL: HTTP {response.status_code}")
+            if response.text:
+                logger.info(f"响应: {response.text}")
+        else:
+            logger.error(f"通过IndexNow提交URL失败: HTTP {response.status_code} - {response.text}")
+            
+    except requests.exceptions.RequestException as e:
+        logger.error(f"网络请求错误: {str(e)}")
+    except Exception as e:
+        logger.error(f"通过IndexNow提交URL时出错: {str(e)}")
+
 def main():
     """主函数"""
     parser = argparse.ArgumentParser(description='提交URL到必应搜索引擎')
@@ -158,10 +257,17 @@ def main():
                         help='输出详细信息')
     parser.add_argument('--random', type=int, default=100, metavar='N',
                         help='随机选择N个URL提交（默认: 100）')
+    parser.add_argument('--indexnow', action='store_true', default=True,
+                        help='使用IndexNow API提交（默认启用，需要在网站根目录放置key文件）')
+    parser.add_argument('--no-indexnow', action='store_true',
+                        help='使用传统Bing Webmaster API提交')
     parser.add_argument('--log-file', default='submit_bing.log',
                         help='日志文件路径 (默认: submit_bing.log)')
     
     args = parser.parse_args()
+    
+    # 如果指定了--no-indexnow，则禁用indexnow
+    use_indexnow = args.indexnow and not args.no_indexnow
     
     # 获取日志文件路径
     log_file = args.log_file
@@ -172,6 +278,7 @@ def main():
     logger.info("=" * 50)
     logger.info("必应URL提交工具启动")
     logger.info(f"日志文件: {log_file}")
+    logger.info(f"提交模式: {'IndexNow API' if use_indexnow else 'Bing Webmaster API'}")
     logger.info("=" * 50)
     
     # 检查API密钥是否为空
@@ -179,8 +286,11 @@ def main():
         logger.error("提交到必应需要API密钥，请通过--api-key参数或BING_API_KEY环境变量提供")
         sys.exit(1)
     
-    # 提交URL到必应
-    submit_to_bing(args.site, args.api_key, args.urls_file, args.verbose, args.random)
+    # 根据模式选择提交方式
+    if use_indexnow:
+        submit_to_indexnow(args.site, args.api_key, args.urls_file, args.verbose, args.random)
+    else:
+        submit_to_bing(args.site, args.api_key, args.urls_file, args.verbose, args.random)
     
     logger.info("=" * 50)
     logger.info("程序执行完成")

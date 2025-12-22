@@ -30,11 +30,11 @@ jobs:
       run: |
         python parse_sitemap.py --sitemap ${{ secrets.SITEMAP_URL }} --output urls.txt
         
-    - name: Submit URLs to Bing
+    - name: Submit URLs to Bing (IndexNow)
       run: |
-        python submit_bing.py --site ${{ secrets.SITE_URL }} --api-key ${{ secrets.BING_API_KEY }} --urls-file urls.txt --random 100 --verbose
+        python submit_bing.py --site ${{ secrets.SITE_URL }} --api-key ${{ secrets.INDEXNOW_KEY }} --urls-file urls.txt --verbose --random 10000
       env:
-        BING_API_KEY: ${{ secrets.BING_API_KEY }}
+        BING_API_KEY: ${{ secrets.INDEXNOW_KEY }}
         SITE_URL: ${{ secrets.SITE_URL }}
 
     - name: Display URLs count
@@ -51,6 +51,7 @@ jobs:
           parse_sitemap.log
           submit_bing.log
         retention-days: 30
+        
     - name: Commit and push if changed
       run: |
         git config --local user.email "action@github.com"

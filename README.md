@@ -86,17 +86,18 @@ python submit_baidu.py --log-file submit.log
 - `--log-file`: 日志文件路径 (默认: submit_baidu.log)
 
 ### 3. submit_bing.py - 必应URL提交工具
-专门用于将URL列表提交到必应搜索引擎。
+专门用于将URL列表提交到必应搜索引擎，支持传统Bing Webmaster API和IndexNow API。
 
 **使用方法：**
 ```bash
-# 使用环境变量
-export BING_API_KEY="YOUR_BING_API_KEY"
-export SITE_URL="https://example.com"
-python submit_bing.py --verbose
+# 使用IndexNow API（默认）
+python submit_bing.py --api-key YOUR_INDEXNOW_KEY --verbose
+
+# 使用传统Bing Webmaster API
+python submit_bing.py --api-key YOUR_BING_API_KEY --no-indexnow --verbose
 
 # 指定参数
-python submit_bing.py --site https://example.com --api-key YOUR_BING_API_KEY --urls-file urls.txt --verbose
+python submit_bing.py --site https://example.com --api-key YOUR_API_KEY --urls-file urls.txt --verbose
 
 # 随机选择50个URL提交
 python submit_bing.py --random 50
@@ -104,10 +105,12 @@ python submit_bing.py --random 50
 
 **参数说明：**
 - `--site`: 网站URL (默认: 环境变量SITE_URL或https://www.bonan.online)
-- `--api-key`: 必应站长平台的API密钥 (默认: 环境变量BING_API_KEY)
+- `--api-key`: API密钥，IndexNow模式使用IndexNow Key，传统模式使用Bing API Key (默认: 环境变量BING_API_KEY)
 - `--urls-file`: 包含URL的文件路径 (默认: urls.txt)
 - `--verbose`: 输出详细信息
 - `--random`: 随机选择N个URL提交 (默认: 100)
+- `--indexnow`: 使用IndexNow API提交 (默认启用)
+- `--no-indexnow`: 使用传统Bing Webmaster API提交
 - `--log-file`: 日志文件路径 (默认: submit_bing.log)
 
 ## 完整工作流程
@@ -155,7 +158,8 @@ set BING_API_KEY=your_bing_api_key
 2. 点击"New repository secret"添加以下密钥：
 
 - `BAIDU_TOKEN`: [您的百度站长平台token](https://ziyuan.baidu.com/site/index#/)
-- `BING_API_KEY`: [您的必应站长平台API密钥](https://www.bing.com/webmasters/)
+- `INDEXNOW_KEY`: 您的IndexNow API密钥（用于必应IndexNow提交）
+- `BING_API_KEY`: [您的必应站长平台API密钥](https://www.bing.com/webmasters/)（可选，用于传统API）
 - `SITE_URL`: 您的网站URL（如：https://www.bonan.online）
 - `SITEMAP_URL`: 您的sitemap URL（如：https://www.bonan.online/sitemap.xml）
 
@@ -173,7 +177,24 @@ set BING_API_KEY=your_bing_api_key
 3. 添加并验证您的网站
 4. 在设置中找到API密钥或生成新的API密钥
 
+### IndexNow配置
+IndexNow是一种快速通知搜索引擎网站内容更新的协议，支持Bing、Yandex等搜索引擎。
+
+1. 生成一个API密钥（32位十六进制字符串，如：`3852a3ccd3a3812559997e5aff4a172f`）
+2. 在网站根目录创建密钥验证文件：`https://yoursite.com/{your-key}.txt`
+3. 文件内容为密钥本身
+4. 配置nginx允许访问该txt文件
+
+**nginx配置示例：**
+```nginx
+location ~ ^/[a-zA-Z0-9]+\.txt$ {
+    root /www/wwwroot/yoursite.com;
+}
+```
+
 ## 必应API说明
+
+### 传统Bing Webmaster API
 
 必应URL提交API使用以下格式：
 
@@ -188,6 +209,26 @@ Host: ssl.bing.com
     "http://yoursite.com/url1",
     "http://yoursite.com/url2",
     "http://yoursite.com/url3"
+  ]
+}
+```
+
+### IndexNow API
+
+IndexNow API使用以下格式：
+
+```http
+POST /IndexNow HTTP/1.1
+Content-Type: application/json; charset=utf-8
+Host: api.indexnow.org
+
+{
+  "host": "www.example.org",
+  "key": "your-indexnow-key",
+  "keyLocation": "https://www.example.org/your-indexnow-key.txt",
+  "urlList": [
+    "https://www.example.org/url1",
+    "https://www.example.org/url2"
   ]
 }
 ```

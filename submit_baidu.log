@@ -363,3 +363,31 @@ https://www.bonan.online/about
 2025-12-22 00:46:00,186 - INFO - ==================================================
 2025-12-22 00:46:00,186 - INFO - 程序执行完成
 2025-12-22 00:46:00,186 - INFO - ==================================================
+2025-12-23 01:04:32,597 - INFO - 日志将保存到文件: submit_baidu.log
+2025-12-23 01:04:32,598 - INFO - ==================================================
+2025-12-23 01:04:32,598 - INFO - 百度URL提交工具启动
+2025-12-23 01:04:32,598 - INFO - 日志文件: submit_baidu.log
+2025-12-23 01:04:32,598 - INFO - ==================================================
+2025-12-23 01:04:32,598 - INFO - 正在提交URL到百度API (Token: SNum***6Obr)
+2025-12-23 01:04:32,598 - INFO - 站点URL: www.bonan.online
+2025-12-23 01:04:32,598 - INFO - API URL: http://data.zz.baidu.com/urls?site=www.bonan.online&token=SNum***6Obr
+2025-12-23 01:04:32,598 - INFO - 随机选择模式: 从 52 个URL中随机选择了 10 个
+2025-12-23 01:04:32,598 - INFO - 提交的URL数量: 10
+2025-12-23 01:04:32,599 - INFO - 正在发送请求到百度API...
+2025-12-23 01:04:32,599 - INFO - 请求URL: http://data.zz.baidu.com/urls?site=www.bonan.online&token=SNum***6Obr
+2025-12-23 01:04:32,599 - INFO - 请求头: {'Content-Type': 'text/plain'}
+2025-12-23 01:04:32,599 - INFO - 请求体 (URLs):
+https://www.bonan.online/posts/TC1I
+https://www.bonan.online/posts/Iris2
+https://www.bonan.online/posts/CPPTemplate
+https://www.bonan.online/categories
+https://www.bonan.online/posts/git
+https://www.bonan.online//ReportingAndFeedback
+https://www.bonan.online//copyright
+https://www.bonan.online/
+https://www.bonan.online/posts/Iris
+https://www.bonan.online/posts/unrealtips
+2025-12-23 01:04:33,925 - INFO - 成功提交URL到百度: {"remain":0,"success":10}
+2025-12-23 01:04:33,925 - INFO - ==================================================
+2025-12-23 01:04:33,926 - INFO - 程序执行完成
+2025-12-23 01:04:33,926 - INFO - ==================================================

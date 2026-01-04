@@ -699,3 +699,31 @@ https://www.bonan.online/posts/Iris1
 2026-01-03 00:42:09,845 - INFO - ==================================================
 2026-01-03 00:42:09,845 - INFO - 程序执行完成
 2026-01-03 00:42:09,845 - INFO - ==================================================
+2026-01-04 00:51:06,661 - INFO - 日志将保存到文件: submit_baidu.log
+2026-01-04 00:51:06,661 - INFO - ==================================================
+2026-01-04 00:51:06,661 - INFO - 百度URL提交工具启动
+2026-01-04 00:51:06,661 - INFO - 日志文件: submit_baidu.log
+2026-01-04 00:51:06,661 - INFO - ==================================================
+2026-01-04 00:51:06,661 - INFO - 正在提交URL到百度API (Token: SNum***6Obr)
+2026-01-04 00:51:06,661 - INFO - 站点URL: www.bonan.online
+2026-01-04 00:51:06,661 - INFO - API URL: http://data.zz.baidu.com/urls?site=www.bonan.online&token=SNum***6Obr
+2026-01-04 00:51:06,662 - INFO - 随机选择模式: 从 63 个URL中随机选择了 10 个
+2026-01-04 00:51:06,662 - INFO - 提交的URL数量: 10
+2026-01-04 00:51:06,662 - INFO - 正在发送请求到百度API...
+2026-01-04 00:51:06,662 - INFO - 请求URL: http://data.zz.baidu.com/urls?site=www.bonan.online&token=SNum***6Obr
+2026-01-04 00:51:06,662 - INFO - 请求头: {'Content-Type': 'text/plain'}
+2026-01-04 00:51:06,662 - INFO - 请求体 (URLs):
+https://www.bonan.online/posts/BitTorrent
+https://www.bonan.online/posts/FSelfRegisteringExec
+https://www.bonan.online/posts/EYhB
+https://www.bonan.online/posts/Iris6
+https://www.bonan.online/posts/CSAPP-2
+https://www.bonan.online/tags
+https://www.bonan.online/posts/DNSServer
+https://www.bonan.online/cookies
+https://www.bonan.online/about
+https://www.bonan.online/posts/P9N3
+2026-01-04 00:51:08,498 - INFO - 成功提交URL到百度: {"remain":0,"success":10}
+2026-01-04 00:51:08,498 - INFO - ==================================================
+2026-01-04 00:51:08,498 - INFO - 程序执行完成
+2026-01-04 00:51:08,498 - INFO - ==================================================

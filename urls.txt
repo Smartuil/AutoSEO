@@ -1,4 +1,7 @@
 https://www.bonan.online/
+https://www.bonan.online/posts/IndirectArray
+https://www.bonan.online/posts/Optional
+https://www.bonan.online/posts/SparseArray
 https://www.bonan.online/posts/Iris18
 https://www.bonan.online/posts/Iris17
 https://www.bonan.online/posts/Iris16

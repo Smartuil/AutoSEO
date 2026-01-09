@@ -1,4 +1,5 @@
 https://www.bonan.online/
+https://www.bonan.online/posts/UE_LOG
 https://www.bonan.online/posts/IndirectArray
 https://www.bonan.online/posts/Optional
 https://www.bonan.online/posts/SparseArray
@@ -49,7 +50,7 @@ https://www.bonan.online/posts/P9N3
 https://www.bonan.online/posts/pHky
 https://www.bonan.online/posts/TC1I
 https://www.bonan.online/posts/Iris
-https://www.bonan.online/posts/BUj2
+https://www.bonan.online/posts/ControlFlow
 https://www.bonan.online/posts/n1qu
 https://www.bonan.online/posts/Z3MC
 https://www.bonan.online/posts/5sQj

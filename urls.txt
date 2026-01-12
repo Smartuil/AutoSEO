@@ -1,4 +1,5 @@
 https://www.bonan.online/
+https://www.bonan.online/posts/ControlFlowsBlueprint
 https://www.bonan.online/posts/UE_LOG
 https://www.bonan.online/posts/IndirectArray
 https://www.bonan.online/posts/Optional
@@ -57,6 +58,7 @@ https://www.bonan.online/posts/5sQj
 https://www.bonan.online/copyright
 https://www.bonan.online/cookies
 https://www.bonan.online/privacy
+https://www.bonan.online/ControlFlowsBlueprintSupport
 https://www.bonan.online/Sponsor
 https://www.bonan.online/ReportingAndFeedback
 https://www.bonan.online/TrendRader

@@ -951,3 +951,31 @@ https://www.bonan.online/posts/ifDZ
 2026-01-12 00:47:56,803 - INFO - ==================================================
 2026-01-12 00:47:56,803 - INFO - 程序执行完成
 2026-01-12 00:47:56,803 - INFO - ==================================================
+2026-01-13 00:40:46,276 - INFO - 日志将保存到文件: submit_baidu.log
+2026-01-13 00:40:46,276 - INFO - ==================================================
+2026-01-13 00:40:46,276 - INFO - 百度URL提交工具启动
+2026-01-13 00:40:46,276 - INFO - 日志文件: submit_baidu.log
+2026-01-13 00:40:46,277 - INFO - ==================================================
+2026-01-13 00:40:46,277 - INFO - 正在提交URL到百度API (Token: SNum***6Obr)
+2026-01-13 00:40:46,277 - INFO - 站点URL: www.bonan.online
+2026-01-13 00:40:46,277 - INFO - API URL: http://data.zz.baidu.com/urls?site=www.bonan.online&token=SNum***6Obr
+2026-01-13 00:40:46,277 - INFO - 随机选择模式: 从 69 个URL中随机选择了 10 个
+2026-01-13 00:40:46,277 - INFO - 提交的URL数量: 10
+2026-01-13 00:40:46,277 - INFO - 正在发送请求到百度API...
+2026-01-13 00:40:46,277 - INFO - 请求URL: http://data.zz.baidu.com/urls?site=www.bonan.online&token=SNum***6Obr
+2026-01-13 00:40:46,277 - INFO - 请求头: {'Content-Type': 'text/plain'}
+2026-01-13 00:40:46,278 - INFO - 请求体 (URLs):
+https://www.bonan.online/posts/n1qu
+https://www.bonan.online/tags
+https://www.bonan.online/posts/CSAPP-2
+https://www.bonan.online/posts/UE_LOG
+https://www.bonan.online/posts/Iris17
+https://www.bonan.online/Sponsor
+https://www.bonan.online/TrendRader
+https://www.bonan.online/cookies
+https://www.bonan.online/posts/Iris1
+https://www.bonan.online/posts/Iris10
+2026-01-13 00:40:47,097 - INFO - 成功提交URL到百度: {"remain":0,"success":10}
+2026-01-13 00:40:47,097 - INFO - ==================================================
+2026-01-13 00:40:47,097 - INFO - 程序执行完成
+2026-01-13 00:40:47,097 - INFO - ==================================================

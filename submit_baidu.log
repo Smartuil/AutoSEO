@@ -1063,3 +1063,31 @@ https://www.bonan.online/posts/ChunkedArray
 2026-01-16 00:45:22,700 - INFO - ==================================================
 2026-01-16 00:45:22,701 - INFO - 程序执行完成
 2026-01-16 00:45:22,701 - INFO - ==================================================
+2026-01-17 00:43:11,742 - INFO - 日志将保存到文件: submit_baidu.log
+2026-01-17 00:43:11,742 - INFO - ==================================================
+2026-01-17 00:43:11,742 - INFO - 百度URL提交工具启动
+2026-01-17 00:43:11,742 - INFO - 日志文件: submit_baidu.log
+2026-01-17 00:43:11,742 - INFO - ==================================================
+2026-01-17 00:43:11,743 - INFO - 正在提交URL到百度API (Token: SNum***6Obr)
+2026-01-17 00:43:11,743 - INFO - 站点URL: www.bonan.online
+2026-01-17 00:43:11,743 - INFO - API URL: http://data.zz.baidu.com/urls?site=www.bonan.online&token=SNum***6Obr
+2026-01-17 00:43:11,743 - INFO - 随机选择模式: 从 70 个URL中随机选择了 10 个
+2026-01-17 00:43:11,743 - INFO - 提交的URL数量: 10
+2026-01-17 00:43:11,743 - INFO - 正在发送请求到百度API...
+2026-01-17 00:43:11,743 - INFO - 请求URL: http://data.zz.baidu.com/urls?site=www.bonan.online&token=SNum***6Obr
+2026-01-17 00:43:11,743 - INFO - 请求头: {'Content-Type': 'text/plain'}
+2026-01-17 00:43:11,743 - INFO - 请求体 (URLs):
+https://www.bonan.online/posts/Iris4
+https://www.bonan.online/posts/Iris9
+https://www.bonan.online/posts/CPPTemplate
+https://www.bonan.online/posts/Iris17
+https://www.bonan.online/posts/EYhB
+https://www.bonan.online/posts/TC1I
+https://www.bonan.online/posts/bulid-your-own-grep
+https://www.bonan.online/posts/FSelfRegisteringExec
+https://www.bonan.online/ReportingAndFeedback
+https://www.bonan.online/posts/ChunkedArray
+2026-01-17 00:43:12,900 - INFO - 成功提交URL到百度: {"remain":0,"success":10}
+2026-01-17 00:43:12,901 - INFO - ==================================================
+2026-01-17 00:43:12,901 - INFO - 程序执行完成
+2026-01-17 00:43:12,901 - INFO - ==================================================

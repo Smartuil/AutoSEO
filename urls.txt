@@ -1,4 +1,6 @@
 https://www.bonan.online/
+https://www.bonan.online/posts/Iris0
+https://www.bonan.online/posts/Kafka
 https://www.bonan.online/posts/FOutputDeviceFile
 https://www.bonan.online/posts/ControlFlowsBlueprint
 https://www.bonan.online/posts/UE_LOG

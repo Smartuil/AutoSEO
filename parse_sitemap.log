@@ -2099,3 +2099,22 @@
 2026-01-23 00:52:32,435 - INFO - URL列表已保存到: urls.txt
 2026-01-23 00:52:32,435 - INFO - 如需提交到百度，请使用: python submit_baidu.py --urls-file urls.txt
 2026-01-23 00:52:32,435 - INFO - ==================================================
+2026-01-24 00:43:52,518 - INFO - 日志将保存到文件: parse_sitemap.log
+2026-01-24 00:43:52,518 - INFO - ==================================================
+2026-01-24 00:43:52,518 - INFO - Sitemap解析工具启动
+2026-01-24 00:43:52,519 - INFO - 日志文件: parse_sitemap.log
+2026-01-24 00:43:52,519 - INFO - ==================================================
+2026-01-24 00:43:52,519 - INFO - 正在获取sitemap:  https://www.bonan.online/sitemap.xml
+2026-01-24 00:43:53,890 - INFO - 从sitemap中提取到 72 个URL
+2026-01-24 00:43:53,891 - INFO - 已保存 72 个URL到 urls.txt
+2026-01-24 00:43:53,891 - INFO - 前5个URL预览:
+2026-01-24 00:43:53,891 - INFO - 1. https://www.bonan.online/
+2026-01-24 00:43:53,891 - INFO - 2. https://www.bonan.online/posts/Iris0
+2026-01-24 00:43:53,892 - INFO - 3. https://www.bonan.online/posts/Kafka
+2026-01-24 00:43:53,892 - INFO - 4. https://www.bonan.online/posts/FOutputDeviceFile
+2026-01-24 00:43:53,892 - INFO - 5. https://www.bonan.online/posts/ControlFlowsBlueprint
+2026-01-24 00:43:53,892 - INFO - ==================================================
+2026-01-24 00:43:53,892 - INFO - 程序执行完成
+2026-01-24 00:43:53,892 - INFO - URL列表已保存到: urls.txt
+2026-01-24 00:43:53,892 - INFO - 如需提交到百度，请使用: python submit_baidu.py --urls-file urls.txt
+2026-01-24 00:43:53,892 - INFO - ==================================================

@@ -1371,3 +1371,31 @@ https://www.bonan.online/posts/Kafka
 2026-01-27 00:48:30,688 - INFO - ==================================================
 2026-01-27 00:48:30,688 - INFO - 程序执行完成
 2026-01-27 00:48:30,688 - INFO - ==================================================
+2026-01-28 00:45:25,446 - INFO - 日志将保存到文件: submit_baidu.log
+2026-01-28 00:45:25,446 - INFO - ==================================================
+2026-01-28 00:45:25,446 - INFO - 百度URL提交工具启动
+2026-01-28 00:45:25,446 - INFO - 日志文件: submit_baidu.log
+2026-01-28 00:45:25,446 - INFO - ==================================================
+2026-01-28 00:45:25,447 - INFO - 正在提交URL到百度API (Token: SNum***6Obr)
+2026-01-28 00:45:25,447 - INFO - 站点URL: www.bonan.online
+2026-01-28 00:45:25,447 - INFO - API URL: http://data.zz.baidu.com/urls?site=www.bonan.online&token=SNum***6Obr
+2026-01-28 00:45:25,447 - INFO - 随机选择模式: 从 73 个URL中随机选择了 10 个
+2026-01-28 00:45:25,447 - INFO - 提交的URL数量: 10
+2026-01-28 00:45:25,447 - INFO - 正在发送请求到百度API...
+2026-01-28 00:45:25,447 - INFO - 请求URL: http://data.zz.baidu.com/urls?site=www.bonan.online&token=SNum***6Obr
+2026-01-28 00:45:25,447 - INFO - 请求头: {'Content-Type': 'text/plain'}
+2026-01-28 00:45:25,447 - INFO - 请求体 (URLs):
+https://www.bonan.online/cookies
+https://www.bonan.online/posts/Iris4
+https://www.bonan.online/posts/build-your-own-shell
+https://www.bonan.online/ReportingAndFeedback
+https://www.bonan.online/posts/ChunkedArray
+https://www.bonan.online/posts/Iris2
+https://www.bonan.online/posts/CSAPP-1
+https://www.bonan.online/posts/P9N3
+https://www.bonan.online/TrendRader
+https://www.bonan.online/posts/VSAndLinuxAndDebug
+2026-01-28 00:45:26,860 - INFO - 成功提交URL到百度: {"remain":0,"success":10}
+2026-01-28 00:45:26,861 - INFO - ==================================================
+2026-01-28 00:45:26,861 - INFO - 程序执行完成
+2026-01-28 00:45:26,861 - INFO - ==================================================

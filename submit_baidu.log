@@ -1427,3 +1427,31 @@ https://www.bonan.online/posts/VSAndLinuxAndDebug
 2026-01-29 00:54:10,746 - INFO - ==================================================
 2026-01-29 00:54:10,746 - INFO - 程序执行完成
 2026-01-29 00:54:10,746 - INFO - ==================================================
+2026-01-30 00:54:11,326 - INFO - 日志将保存到文件: submit_baidu.log
+2026-01-30 00:54:11,326 - INFO - ==================================================
+2026-01-30 00:54:11,326 - INFO - 百度URL提交工具启动
+2026-01-30 00:54:11,326 - INFO - 日志文件: submit_baidu.log
+2026-01-30 00:54:11,326 - INFO - ==================================================
+2026-01-30 00:54:11,326 - INFO - 正在提交URL到百度API (Token: SNum***6Obr)
+2026-01-30 00:54:11,326 - INFO - 站点URL: www.bonan.online
+2026-01-30 00:54:11,326 - INFO - API URL: http://data.zz.baidu.com/urls?site=www.bonan.online&token=SNum***6Obr
+2026-01-30 00:54:11,326 - INFO - 随机选择模式: 从 73 个URL中随机选择了 10 个
+2026-01-30 00:54:11,327 - INFO - 提交的URL数量: 10
+2026-01-30 00:54:11,327 - INFO - 正在发送请求到百度API...
+2026-01-30 00:54:11,327 - INFO - 请求URL: http://data.zz.baidu.com/urls?site=www.bonan.online&token=SNum***6Obr
+2026-01-30 00:54:11,327 - INFO - 请求头: {'Content-Type': 'text/plain'}
+2026-01-30 00:54:11,327 - INFO - 请求体 (URLs):
+https://www.bonan.online/posts/Iris1
+https://www.bonan.online/posts/Iris0
+https://www.bonan.online/posts/Iris3
+https://www.bonan.online/cookies
+https://www.bonan.online/posts/FSelfRegisteringExec
+https://www.bonan.online/posts/ifDZ
+https://www.bonan.online/posts/Optional
+https://www.bonan.online/posts/MeshDrawingPipeline
+https://www.bonan.online/posts/Iris11
+https://www.bonan.online/posts/BitTorrent
+2026-01-30 00:54:12,300 - INFO - 成功提交URL到百度: {"remain":0,"success":10}
+2026-01-30 00:54:12,301 - INFO - ==================================================
+2026-01-30 00:54:12,301 - INFO - 程序执行完成
+2026-01-30 00:54:12,301 - INFO - ==================================================

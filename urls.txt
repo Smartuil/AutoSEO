@@ -1,4 +1,5 @@
 https://www.bonan.online/
+https://www.bonan.online/posts/TFuture
 https://www.bonan.online/posts/Interpreter
 https://www.bonan.online/posts/Iris0
 https://www.bonan.online/posts/Kafka

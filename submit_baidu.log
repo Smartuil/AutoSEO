@@ -1819,3 +1819,31 @@ https://www.bonan.online/posts/SQLite
 2026-02-12 00:58:19,580 - INFO - ==================================================
 2026-02-12 00:58:19,580 - INFO - 程序执行完成
 2026-02-12 00:58:19,580 - INFO - ==================================================
+2026-02-13 01:01:50,995 - INFO - 日志将保存到文件: submit_baidu.log
+2026-02-13 01:01:50,995 - INFO - ==================================================
+2026-02-13 01:01:50,996 - INFO - 百度URL提交工具启动
+2026-02-13 01:01:50,996 - INFO - 日志文件: submit_baidu.log
+2026-02-13 01:01:50,996 - INFO - ==================================================
+2026-02-13 01:01:50,996 - INFO - 正在提交URL到百度API (Token: SNum***6Obr)
+2026-02-13 01:01:50,996 - INFO - 站点URL: www.bonan.online
+2026-02-13 01:01:50,996 - INFO - API URL: http://data.zz.baidu.com/urls?site=www.bonan.online&token=SNum***6Obr
+2026-02-13 01:01:50,996 - INFO - 随机选择模式: 从 74 个URL中随机选择了 10 个
+2026-02-13 01:01:50,996 - INFO - 提交的URL数量: 10
+2026-02-13 01:01:50,997 - INFO - 正在发送请求到百度API...
+2026-02-13 01:01:50,997 - INFO - 请求URL: http://data.zz.baidu.com/urls?site=www.bonan.online&token=SNum***6Obr
+2026-02-13 01:01:50,997 - INFO - 请求头: {'Content-Type': 'text/plain'}
+2026-02-13 01:01:50,997 - INFO - 请求体 (URLs):
+https://www.bonan.online/posts/FSelfRegisteringExec
+https://www.bonan.online/posts/SparseArray
+https://www.bonan.online/posts/SimplePropertyDebug
+https://www.bonan.online/posts/Iris17
+https://www.bonan.online/privacy
+https://www.bonan.online/posts/Iris1
+https://www.bonan.online/posts/git
+https://www.bonan.online/tags
+https://www.bonan.online/about
+https://www.bonan.online/posts/Optional
+2026-02-13 01:01:52,240 - INFO - 成功提交URL到百度: {"remain":0,"success":10}
+2026-02-13 01:01:52,240 - INFO - ==================================================
+2026-02-13 01:01:52,240 - INFO - 程序执行完成
+2026-02-13 01:01:52,240 - INFO - ==================================================

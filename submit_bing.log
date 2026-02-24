@@ -7518,3 +7518,103 @@
 2026-02-23 01:03:28,987 - INFO - ==================================================
 2026-02-23 01:03:28,987 - INFO - 程序执行完成
 2026-02-23 01:03:28,987 - INFO - ==================================================
+2026-02-24 01:01:51,964 - INFO - 日志将保存到文件: submit_bing.log
+2026-02-24 01:01:51,964 - INFO - ==================================================
+2026-02-24 01:01:51,964 - INFO - 必应URL提交工具启动
+2026-02-24 01:01:51,964 - INFO - 日志文件: submit_bing.log
+2026-02-24 01:01:51,964 - INFO - 提交模式: IndexNow API
+2026-02-24 01:01:51,964 - INFO - ==================================================
+2026-02-24 01:01:51,965 - INFO - 正在通过IndexNow API提交URL (API Key: a2cd***b332)
+2026-02-24 01:01:51,965 - INFO - 站点URL: https://www.bonan.online
+2026-02-24 01:01:51,965 - INFO - Host: www.bonan.online
+2026-02-24 01:01:51,965 - INFO - API URL: https://api.indexnow.org/IndexNow
+2026-02-24 01:01:51,965 - INFO - 随机选择模式: URL总数(74)不超过10000个，将全部提交
+2026-02-24 01:01:51,965 - INFO - 提交的URL数量: 74
+2026-02-24 01:01:51,965 - INFO - 正在发送请求到IndexNow API...
+2026-02-24 01:01:51,965 - INFO - 请求URL: https://api.indexnow.org/IndexNow
+2026-02-24 01:01:51,965 - INFO - 请求头: {'Content-Type': 'application/json; charset=utf-8'}
+2026-02-24 01:01:51,965 - INFO - 请求体: {
+  "host": "www.bonan.online",
+  "key": "a2cd***b332",
+  "keyLocation": "https://www.bonan.online/a2cd***b332.txt",
+  "urlList": [
+    "https://www.bonan.online/",
+    "https://www.bonan.online/posts/TFuture",
+    "https://www.bonan.online/posts/Interpreter",
+    "https://www.bonan.online/posts/Iris0",
+    "https://www.bonan.online/posts/Kafka",
+    "https://www.bonan.online/posts/FOutputDeviceFile",
+    "https://www.bonan.online/posts/ControlFlowsBlueprint",
+    "https://www.bonan.online/posts/UE_LOG",
+    "https://www.bonan.online/posts/IndirectArray",
+    "https://www.bonan.online/posts/Optional",
+    "https://www.bonan.online/posts/SparseArray",
+    "https://www.bonan.online/posts/Iris18",
+    "https://www.bonan.online/posts/Iris17",
+    "https://www.bonan.online/posts/Iris16",
+    "https://www.bonan.online/posts/Iris15",
+    "https://www.bonan.online/posts/Iris14",
+    "https://www.bonan.online/posts/Iris13",
+    "https://www.bonan.online/posts/Iris12",
+    "https://www.bonan.online/posts/Iris11",
+    "https://www.bonan.online/posts/Iris10",
+    "https://www.bonan.online/posts/EYhB",
+    "https://www.bonan.online/posts/BitTorrent",
+    "https://www.bonan.online/posts/Iris9",
+    "https://www.bonan.online/posts/HTTP-Server",
+    "https://www.bonan.online/posts/Iris8",
+    "https://www.bonan.online/posts/SQLite",
+    "https://www.bonan.online/posts/Iris7",
+    "https://www.bonan.online/posts/ChunkedArray",
+    "https://www.bonan.online/posts/MemStack",
+    "https://www.bonan.online/posts/Iris6",
+    "https://www.bonan.online/posts/SimplePropertyDebug",
+    "https://www.bonan.online/posts/DNSServer",
+    "https://www.bonan.online/posts/Iris5",
+    "https://www.bonan.online/posts/git",
+    "https://www.bonan.online/posts/Iris4",
+    "https://www.bonan.online/posts/Iris3",
+    "https://www.bonan.online/posts/Iris2",
+    "https://www.bonan.online/posts/Iris1",
+    "https://www.bonan.online/posts/CPPTemplate",
+    "https://www.bonan.online/posts/FSelfRegisteringExec",
+    "https://www.bonan.online/posts/FindInBlueprint",
+    "https://www.bonan.online/posts/bulid-your-own-grep",
+    "https://www.bonan.online/posts/build-your-own-shell",
+    "https://www.bonan.online/posts/VSAndLinuxAndDebug",
+    "https://www.bonan.online/posts/AwesomeWebsites",
+    "https://www.bonan.online/posts/Badge",
+    "https://www.bonan.online/posts/MeshDrawingPipeline",
+    "https://www.bonan.online/posts/Lyra'sAnimation",
+    "https://www.bonan.online/posts/CSAPP-2",
+    "https://www.bonan.online/posts/CSAPP-1",
+    "https://www.bonan.online/posts/unrealtips",
+    "https://www.bonan.online/posts/CSAPP",
+    "https://www.bonan.online/posts/XiaomiAlbumSyncer",
+    "https://www.bonan.online/posts/ifDZ",
+    "https://www.bonan.online/posts/P9N3",
+    "https://www.bonan.online/posts/pHky",
+    "https://www.bonan.online/posts/TC1I",
+    "https://www.bonan.online/posts/Iris",
+    "https://www.bonan.online/posts/ControlFlow",
+    "https://www.bonan.online/posts/n1qu",
+    "https://www.bonan.online/posts/Z3MC",
+    "https://www.bonan.online/posts/5sQj",
+    "https://www.bonan.online/copyright",
+    "https://www.bonan.online/cookies",
+    "https://www.bonan.online/privacy",
+    "https://www.bonan.online/ControlFlowsBlueprintSupport",
+    "https://www.bonan.online/Sponsor",
+    "https://www.bonan.online/ReportingAndFeedback",
+    "https://www.bonan.online/TrendRader",
+    "https://www.bonan.online/link",
+    "https://www.bonan.online/archives",
+    "https://www.bonan.online/categories",
+    "https://www.bonan.online/tags",
+    "https://www.bonan.online/about"
+  ]
+}
+2026-02-24 01:01:52,674 - INFO - 成功通过IndexNow提交URL: HTTP 200
+2026-02-24 01:01:52,675 - INFO - ==================================================
+2026-02-24 01:01:52,675 - INFO - 程序执行完成
+2026-02-24 01:01:52,675 - INFO - ==================================================

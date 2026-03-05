@@ -2351,3 +2351,31 @@ https://www.bonan.online/posts/EYhB
 2026-03-04 00:54:50,143 - INFO - ==================================================
 2026-03-04 00:54:50,143 - INFO - 程序执行完成
 2026-03-04 00:54:50,143 - INFO - ==================================================
+2026-03-05 00:57:08,177 - INFO - 日志将保存到文件: submit_baidu.log
+2026-03-05 00:57:08,177 - INFO - ==================================================
+2026-03-05 00:57:08,177 - INFO - 百度URL提交工具启动
+2026-03-05 00:57:08,178 - INFO - 日志文件: submit_baidu.log
+2026-03-05 00:57:08,178 - INFO - ==================================================
+2026-03-05 00:57:08,178 - INFO - 正在提交URL到百度API (Token: SNum***6Obr)
+2026-03-05 00:57:08,178 - INFO - 站点URL: www.bonan.online
+2026-03-05 00:57:08,178 - INFO - API URL: http://data.zz.baidu.com/urls?site=www.bonan.online&token=SNum***6Obr
+2026-03-05 00:57:08,178 - INFO - 随机选择模式: 从 74 个URL中随机选择了 10 个
+2026-03-05 00:57:08,178 - INFO - 提交的URL数量: 10
+2026-03-05 00:57:08,178 - INFO - 正在发送请求到百度API...
+2026-03-05 00:57:08,178 - INFO - 请求URL: http://data.zz.baidu.com/urls?site=www.bonan.online&token=SNum***6Obr
+2026-03-05 00:57:08,179 - INFO - 请求头: {'Content-Type': 'text/plain'}
+2026-03-05 00:57:08,179 - INFO - 请求体 (URLs):
+https://www.bonan.online/posts/SQLite
+https://www.bonan.online/ControlFlowsBlueprintSupport
+https://www.bonan.online/posts/FSelfRegisteringExec
+https://www.bonan.online/posts/FindInBlueprint
+https://www.bonan.online/posts/SimplePropertyDebug
+https://www.bonan.online/posts/Iris8
+https://www.bonan.online/posts/MeshDrawingPipeline
+https://www.bonan.online/posts/CSAPP
+https://www.bonan.online/posts/Iris0
+https://www.bonan.online/posts/ControlFlow
+2026-03-05 00:57:09,639 - INFO - 成功提交URL到百度: {"remain":0,"success":10}
+2026-03-05 00:57:09,639 - INFO - ==================================================
+2026-03-05 00:57:09,639 - INFO - 程序执行完成
+2026-03-05 00:57:09,639 - INFO - ==================================================

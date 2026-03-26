@@ -2911,3 +2911,31 @@ https://www.bonan.online/posts/unrealtips
 2026-03-25 00:59:45,692 - INFO - ==================================================
 2026-03-25 00:59:45,693 - INFO - 程序执行完成
 2026-03-25 00:59:45,693 - INFO - ==================================================
+2026-03-26 01:04:40,479 - INFO - 日志将保存到文件: submit_baidu.log
+2026-03-26 01:04:40,480 - INFO - ==================================================
+2026-03-26 01:04:40,480 - INFO - 百度URL提交工具启动
+2026-03-26 01:04:40,480 - INFO - 日志文件: submit_baidu.log
+2026-03-26 01:04:40,480 - INFO - ==================================================
+2026-03-26 01:04:40,480 - INFO - 正在提交URL到百度API (Token: SNum***6Obr)
+2026-03-26 01:04:40,480 - INFO - 站点URL: www.bonan.online
+2026-03-26 01:04:40,480 - INFO - API URL: http://data.zz.baidu.com/urls?site=www.bonan.online&token=SNum***6Obr
+2026-03-26 01:04:40,481 - INFO - 随机选择模式: 从 74 个URL中随机选择了 10 个
+2026-03-26 01:04:40,481 - INFO - 提交的URL数量: 10
+2026-03-26 01:04:40,481 - INFO - 正在发送请求到百度API...
+2026-03-26 01:04:40,481 - INFO - 请求URL: http://data.zz.baidu.com/urls?site=www.bonan.online&token=SNum***6Obr
+2026-03-26 01:04:40,481 - INFO - 请求头: {'Content-Type': 'text/plain'}
+2026-03-26 01:04:40,481 - INFO - 请求体 (URLs):
+https://www.bonan.online/ReportingAndFeedback
+https://www.bonan.online/posts/Lyra'sAnimation
+https://www.bonan.online/categories
+https://www.bonan.online/posts/git
+https://www.bonan.online/posts/CSAPP
+https://www.bonan.online/cookies
+https://www.bonan.online/posts/TFuture
+https://www.bonan.online/posts/unrealtips
+https://www.bonan.online/posts/SparseArray
+https://www.bonan.online/posts/ControlFlowsBlueprint
+2026-03-26 01:04:42,209 - INFO - 成功提交URL到百度: {"remain":0,"success":10}
+2026-03-26 01:04:42,209 - INFO - ==================================================
+2026-03-26 01:04:42,210 - INFO - 程序执行完成
+2026-03-26 01:04:42,210 - INFO - ==================================================

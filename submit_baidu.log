@@ -4311,3 +4311,31 @@ https://www.bonan.online/posts/SparseArray
 2026-05-15 01:47:02,839 - INFO - ==================================================
 2026-05-15 01:47:02,839 - INFO - 程序执行完成
 2026-05-15 01:47:02,839 - INFO - ==================================================
+2026-05-16 01:27:02,511 - INFO - 日志将保存到文件: submit_baidu.log
+2026-05-16 01:27:02,511 - INFO - ==================================================
+2026-05-16 01:27:02,512 - INFO - 百度URL提交工具启动
+2026-05-16 01:27:02,512 - INFO - 日志文件: submit_baidu.log
+2026-05-16 01:27:02,512 - INFO - ==================================================
+2026-05-16 01:27:02,512 - INFO - 正在提交URL到百度API (Token: SNum***6Obr)
+2026-05-16 01:27:02,512 - INFO - 站点URL: www.bonan.online
+2026-05-16 01:27:02,512 - INFO - API URL: http://data.zz.baidu.com/urls?site=www.bonan.online&token=SNum***6Obr
+2026-05-16 01:27:02,512 - INFO - 随机选择模式: 从 74 个URL中随机选择了 10 个
+2026-05-16 01:27:02,512 - INFO - 提交的URL数量: 10
+2026-05-16 01:27:02,512 - INFO - 正在发送请求到百度API...
+2026-05-16 01:27:02,513 - INFO - 请求URL: http://data.zz.baidu.com/urls?site=www.bonan.online&token=SNum***6Obr
+2026-05-16 01:27:02,513 - INFO - 请求头: {'Content-Type': 'text/plain'}
+2026-05-16 01:27:02,513 - INFO - 请求体 (URLs):
+https://www.bonan.online/ControlFlowsBlueprintSupport
+https://www.bonan.online/posts/SimplePropertyDebug
+https://www.bonan.online/posts/ControlFlow
+https://www.bonan.online/posts/Interpreter
+https://www.bonan.online/posts/FSelfRegisteringExec
+https://www.bonan.online/posts/BitTorrent
+https://www.bonan.online/posts/Iris3
+https://www.bonan.online/categories
+https://www.bonan.online/posts/Kafka
+https://www.bonan.online/posts/FindInBlueprint
+2026-05-16 01:27:03,659 - INFO - 成功提交URL到百度: {"remain":0,"success":10}
+2026-05-16 01:27:03,659 - INFO - ==================================================
+2026-05-16 01:27:03,660 - INFO - 程序执行完成
+2026-05-16 01:27:03,660 - INFO - ==================================================

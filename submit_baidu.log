@@ -4367,3 +4367,31 @@ https://www.bonan.online/posts/Iris1
 2026-05-17 01:44:00,970 - INFO - ==================================================
 2026-05-17 01:44:00,970 - INFO - 程序执行完成
 2026-05-17 01:44:00,970 - INFO - ==================================================
+2026-05-18 01:52:50,190 - INFO - 日志将保存到文件: submit_baidu.log
+2026-05-18 01:52:50,190 - INFO - ==================================================
+2026-05-18 01:52:50,190 - INFO - 百度URL提交工具启动
+2026-05-18 01:52:50,191 - INFO - 日志文件: submit_baidu.log
+2026-05-18 01:52:50,191 - INFO - ==================================================
+2026-05-18 01:52:50,191 - INFO - 正在提交URL到百度API (Token: SNum***6Obr)
+2026-05-18 01:52:50,191 - INFO - 站点URL: www.bonan.online
+2026-05-18 01:52:50,191 - INFO - API URL: http://data.zz.baidu.com/urls?site=www.bonan.online&token=SNum***6Obr
+2026-05-18 01:52:50,191 - INFO - 随机选择模式: 从 74 个URL中随机选择了 10 个
+2026-05-18 01:52:50,191 - INFO - 提交的URL数量: 10
+2026-05-18 01:52:50,191 - INFO - 正在发送请求到百度API...
+2026-05-18 01:52:50,192 - INFO - 请求URL: http://data.zz.baidu.com/urls?site=www.bonan.online&token=SNum***6Obr
+2026-05-18 01:52:50,192 - INFO - 请求头: {'Content-Type': 'text/plain'}
+2026-05-18 01:52:50,192 - INFO - 请求体 (URLs):
+https://www.bonan.online/categories
+https://www.bonan.online/archives
+https://www.bonan.online/posts/git
+https://www.bonan.online/posts/UE_LOG
+https://www.bonan.online/posts/Iris3
+https://www.bonan.online/posts/Iris4
+https://www.bonan.online/posts/Kafka
+https://www.bonan.online/posts/MemStack
+https://www.bonan.online/posts/AwesomeWebsites
+https://www.bonan.online/posts/pHky
+2026-05-18 01:52:51,158 - INFO - 成功提交URL到百度: {"remain":0,"success":10}
+2026-05-18 01:52:51,159 - INFO - ==================================================
+2026-05-18 01:52:51,159 - INFO - 程序执行完成
+2026-05-18 01:52:51,159 - INFO - ==================================================

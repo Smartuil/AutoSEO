@@ -5571,3 +5571,31 @@ https://www.bonan.online/posts/AwesomeWebsites
 2026-07-01 01:59:59,317 - INFO - ==================================================
 2026-07-01 01:59:59,317 - INFO - 程序执行完成
 2026-07-01 01:59:59,317 - INFO - ==================================================
+2026-07-02 01:53:50,811 - INFO - 日志将保存到文件: submit_baidu.log
+2026-07-02 01:53:50,811 - INFO - ==================================================
+2026-07-02 01:53:50,811 - INFO - 百度URL提交工具启动
+2026-07-02 01:53:50,811 - INFO - 日志文件: submit_baidu.log
+2026-07-02 01:53:50,811 - INFO - ==================================================
+2026-07-02 01:53:50,811 - INFO - 正在提交URL到百度API (Token: SNum***6Obr)
+2026-07-02 01:53:50,811 - INFO - 站点URL: www.bonan.online
+2026-07-02 01:53:50,811 - INFO - API URL: http://data.zz.baidu.com/urls?site=www.bonan.online&token=SNum***6Obr
+2026-07-02 01:53:50,812 - INFO - 随机选择模式: 从 74 个URL中随机选择了 10 个
+2026-07-02 01:53:50,812 - INFO - 提交的URL数量: 10
+2026-07-02 01:53:50,812 - INFO - 正在发送请求到百度API...
+2026-07-02 01:53:50,812 - INFO - 请求URL: http://data.zz.baidu.com/urls?site=www.bonan.online&token=SNum***6Obr
+2026-07-02 01:53:50,812 - INFO - 请求头: {'Content-Type': 'text/plain'}
+2026-07-02 01:53:50,812 - INFO - 请求体 (URLs):
+https://www.bonan.online/posts/DNSServer
+https://www.bonan.online/posts/EYhB
+https://www.bonan.online/posts/FSelfRegisteringExec
+https://www.bonan.online/posts/Iris13
+https://www.bonan.online/posts/Iris14
+https://www.bonan.online/posts/git
+https://www.bonan.online/posts/Iris16
+https://www.bonan.online/posts/Iris4
+https://www.bonan.online/tags
+https://www.bonan.online/posts/Iris10
+2026-07-02 01:53:52,059 - INFO - 成功提交URL到百度: {"remain":0,"success":10}
+2026-07-02 01:53:52,059 - INFO - ==================================================
+2026-07-02 01:53:52,059 - INFO - 程序执行完成
+2026-07-02 01:53:52,059 - INFO - ==================================================
